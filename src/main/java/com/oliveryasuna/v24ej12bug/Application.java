@@ -1,6 +1,5 @@
 package com.oliveryasuna.v24ej12bug;
 
-import com.vaadin.flow.server.VaadinServlet;
 import org.eclipse.jetty.ee10.servlet.ServletHolder;
 import org.eclipse.jetty.ee10.webapp.WebAppContext;
 import org.eclipse.jetty.server.Server;
@@ -19,7 +18,7 @@ public final class Application {
     context.setContextPath("/");
     context.setExtractWAR(false);
 
-    final ServletHolder vaadinServletHolder = context.addServlet(VaadinServlet.class, "/*");
+    final ServletHolder vaadinServletHolder = context.addServlet(FixedVaadinServlet.class, "/*");
 
     vaadinServletHolder.setInitOrder(1);
     vaadinServletHolder.setInitParameter("pushMode", "automatic");
